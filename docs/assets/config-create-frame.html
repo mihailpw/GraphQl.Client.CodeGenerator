@@ -1,0 +1,128 @@
+<div>
+    <p>Populate config fields:</p>
+    <table>
+        <thead>
+            <td colspan="2">Name</td>
+            <td></td>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2"><code>schemaUri</code></td>
+                <td><input type="text" class="field-input" data-field="schemaUri" value="https://your.site/graphql"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>generator</code></td>
+                <td><input type="text" class="field-input" data-field="generator" value="dotnetcore"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>name</code></td>
+                <td><input type="text" class="field-input" data-field="name" value="Generated.cs"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>innerLevelOfType</code></td>
+                <td><input type="number" class="field-input" data-field="innerLevelOfType" value="4"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>outputToFolder</code></td>
+                <td><input type="checkbox" class="field-input" data-field="outputToFolder" checked></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>outputFolderPath</code></td>
+                <td><input type="text" class="field-input" data-field="outputFolderPath" value="./"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>outputToConsole</code></td>
+                <td><input type="checkbox" class="field-input" data-field="outputToConsole"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>namespace</code></td>
+                <td><input type="text" class="field-input" data-field="namespace" value="GraphQlClient"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>mainClientFactoryClassName</code></td>
+                <td><input type="text" class="field-input" data-field="mainClientFactoryClassName" value="AppClientFactory"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>generateDocs</code></td>
+                <td><input type="checkbox" class="field-input" data-field="generateDocs"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>generateInputObjectConstructor</code></td>
+                <td><input type="checkbox" class="field-input" data-field="generateInputObjectConstructor" checked></td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.dtoEnum</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.dtoEnum.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.dtoEnum.buildFormat" value="{0}Enum">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.dtoInputObject</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.dtoInputObject.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.dtoInputObject.buildFormat" value="{0}Dto">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.dtoInterface</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.dtoInterface.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.dtoInterface.buildFormat" value="{0}Dto">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.dtoObject</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.dtoObject.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.dtoObject.buildFormat" value="{0}Dto">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.dtoUnion</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.dtoUnion.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.dtoUnion.buildFormat" value="{0}Dto">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.builderInterface</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.builderInterface.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.builderInterface.buildFormat" value="{0}Builder">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.builderObject</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.builderObject.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.builderObject.buildFormat" value="{0}Builder">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.builderUnion</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.builderUnion.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.builderUnion.buildFormat" value="{0}Builder">
+                </td>
+            </tr>
+            <tr>
+                <td><code>typeNaming.constructionOnType</code></td>
+                <td><code>removeRegex</code><br><code>buildFormat</code></td>
+                <td>
+                    <input type="text" class="field-input" data-field="typeNaming.constructionOnType.removeRegex" value="Type">
+                    <input type="text" class="field-input" data-field="typeNaming.constructionOnType.buildFormat" value="On{0}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" id="generate-config-button" value="Generate and download">
+</div>
