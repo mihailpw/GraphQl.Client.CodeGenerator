@@ -34,11 +34,13 @@ namespace GraphQl.Client.CodeGenerator.App.Console
             {
                 var exception = e.InnerException ?? e;
 
+                System.Console.WriteLine(
 #if DEBUG
-                System.Console.WriteLine(exception);
+                    exception
 #else
-                Console.WriteLine($"Error: {exception.Message}");
+                   $"Error: {exception.Message}"
 #endif
+                );
 
                 Environment.ExitCode = -1;
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using GraphQl.Client.CodeGenerator.App.Console.Configuration;
@@ -17,6 +18,9 @@ namespace GraphQl.Client.CodeGenerator.App.Console
     {
         public static async Task GenerateClientAsync(ConsoleOptions options)
         {
+            options.WorkingDir ??= Directory.GetCurrentDirectory();
+            options.Config = Path.Combine(options.WorkingDir, options.Config);
+
             var config = !options.ConfigCreate
                 ? await Config.ReadFromAsync(options.Config)
                 : await AutoConfigurator.CreateAndWriteConfig(options.Config);

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <GraphQlClientCodeGeneratorExe>"$(MSBuildThisFileDirectory)../tools/build/GraphQl.Client.CodeGenerator.App.Console.exe" --working-dir "$(MSBuildProjectDirectory)"</GraphQlClientCodeGeneratorExe>
+  </PropertyGroup>
+</Project>

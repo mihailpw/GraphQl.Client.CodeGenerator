@@ -30,7 +30,7 @@ namespace GraphQl.Client.CodeGenerator.Generators.DotNet.Helpers
                         case ScalarTypes.String:
                             return "string";
                         case ScalarTypes.Boolean:
-                            return $"{nullableSign}";
+                            return $"bool{nullableSign}";
                         case ScalarTypes.Float:
                             return $"float{nullableSign}";
                         case ScalarTypes.Int:

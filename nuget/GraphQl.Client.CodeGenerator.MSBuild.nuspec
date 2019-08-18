@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+
+  <metadata>
+    <id>GraphQl.Client.CodeGenerator.MSBuild</id>
+    <title>GraphQl Client Code Generator</title>
+    <version>1.0.0-alpha01</version>
+    <authors>Mihail Podshivadlov</authors>
+    <owners>Mihail Podshivadlov</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/mihailpw/GraphQl.Client.CodeGenerator</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mihailpw/GraphQl.Client.CodeGenerator/master/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GraphQL Client Code Generator</description>
+    <releaseNotes>Initial prerelease</releaseNotes>
+    <copyright>Copyright © Mihail Podshivadlov, 2019</copyright>
+    <repository type="git" url="https://github.com/mihailpw/GraphQl.Client.CodeGenerator.git"/>
+    <tags>DotNet DotNetCore GraphQL Client CodeGen</tags>
+	<developmentDependency>true</developmentDependency>
+    <dependencies />
+  </metadata>
+
+  <files>
+    <file src="GraphQl.Client.CodeGenerator.MSBuild.props" target="build" />
+    <file src="GraphQl.Client.CodeGenerator.MSBuild.props" target="buildCrossTargeting" />
+    <file src=".\out\build\*" target="tools/build" />
+  </files>
+
+</package>
