@@ -1,0 +1,51 @@
+{
+  "schemaUri": "https://localhost:5001/v1/graphql",
+  "generator": "dotnet",
+  "name": "GraphQlClientFactory.generated.cs",
+  "innerLevelOfType": 4,
+  "outputToFolder": true,
+  "outputFolderPath": "./GraphQl/",
+  "outputToConsole": false,
+  "namespace": "GraphQlClient",
+  "mainClientFactoryClassName": "GraphQlClientFactory",
+  "generateDocs": false,
+  "generateInputObjectConstructor": true,
+  "typeNaming": {
+    "dtoEnum": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Enum"
+    },
+    "dtoInputObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoInterface": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoUnion": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "builderInterface": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "builderObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "builderUnion": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "constructionOnType": {
+      "removeRegex": "Type",
+      "buildFormat": "On{0}"
+    }
+  }
+}

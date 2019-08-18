@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQl.Client.CodeGenerator.Generators.DotNet\GraphQl.Client.CodeGenerator.Generators.DotNet.csproj" />
+    <ProjectReference Include="..\GraphQl.Client.CodeGenerator.Infra\GraphQl.Client.CodeGenerator.Infra.csproj" />
+    <ProjectReference Include="..\GraphQl.Client.CodeGenerator.Processor\GraphQl.Client.CodeGenerator.Processor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

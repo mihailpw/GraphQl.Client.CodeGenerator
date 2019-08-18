@@ -1,0 +1,89 @@
+{{#ifKind this "object" "interface" "union" }}
+    {{#withDocs}}
+    /// <summary>
+        {{#if description}}
+    /// {{ description }}.
+        {{/if}}
+    /// Builder: <see cref="{{ resolveBuilderName this }}" />.
+    /// </summary>
+    {{/withDocs}}
+    public class {{ resolveDtoName this }}
+    {
+    {{#each fields }}
+        {{#withDocs}}
+            {{#if description}}
+        /// <summary>
+        /// {{ description }}.
+        /// </summary>
+            {{/if}}
+        {{/withDocs}}
+        public {{{ resolveDtoName type "true" }}} {{ toPascal name }} { get; set; }
+    {{/each}}
+    {{#each possibleFields }}
+        {{#withDocs}}
+        /// <summary>
+            {{#if description}}
+        /// {{ description }}.
+            {{/if}}
+        /// Extension: <see cref="{{ resolveDtoName ownerType }}.{{ toPascal name }}" />.
+        /// </summary>
+        {{/withDocs}}
+        public {{{ resolveDtoName type "true" }}} {{ toPascal name }} { get; set; }
+    {{/each}}
+    }
+{{/ifKind}}
+{{#ifKind this "inputObject" }}
+    {{#withDocs}}
+        {{#if description}}
+    /// <summary>
+    /// {{ description }}.
+    /// </summary>
+        {{/if}}
+    {{/withDocs}}
+    public class {{ resolveDtoName this }}
+    {
+    {{#each inputFields }}
+        {{#withDocs}}
+            {{#if description}}
+        /// <summary>
+        /// {{ description }}.
+        /// </summary>
+            {{/if}}
+        {{/withDocs}}
+        public {{{ resolveDtoName type "true" }}} {{ toPascal name }} { get; set; }{{{ resolveDefaultValue this " = {0};" }}}
+    {{/each}}
+    {{#if @root.generateInputObjectConstructor }}
+
+
+        public {{{ resolveDtoName this }}}({{#with inputFields }}{{> builder-method-args }}{{/with}})
+        {
+        {{#each inputFields }}
+            {{ toPascal name }} = {{{ name }}};
+        {{/each}}
+        }
+    {{/if}}
+    }
+{{/ifKind}}
+{{#ifKind this "enum"}}
+    {{#withDocs}}
+        {{#if description}}
+    /// <summary>
+    /// {{ description }}.
+    /// </summary>
+        {{/if}}
+    {{/withDocs}}
+    public enum {{ resolveDtoName this }}
+    {
+    {{#each enumValues }}
+        {{#withDocs}}
+            {{#if description}}
+        /// <summary>
+        /// {{ description }}.
+        /// </summary>
+            {{/if}}
+        {{/withDocs}}
+        [EnumMember(Value = "{{name}}")]
+        {{ toPascal name}},
+    {{/each}}
+    }
+{{/ifKind}}

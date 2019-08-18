@@ -1,0 +1,24 @@
+        public Func<Action<{{ resolveBuilderName type }}>, {{ resolveBuilderName ../../ }}> {{ toPascal name }}({{#with args}}{{> builder-method-args }}{{/with}})
+    {{/if}}
+        {
+            IncludingField("{{ name }}");
+            return __ =>
+            {
+                var _ = new {{ resolveBuilderName type }}();
+                __(_);
+                IncludeField(
+                    "{{ name }}",
+    {{#if args }}
+                    new List<Argument>
+                    {
+        {{#each args }}
+                        new Argument("{{ name }}", "{{ resolveGraphQlTypeName type }}", {{name}}),
+        {{/each}}
+                    },
+    {{else}}
+                    new List<Argument>(0),
+    {{/if}}
+                    _);
+                return this;
+            };
+        }

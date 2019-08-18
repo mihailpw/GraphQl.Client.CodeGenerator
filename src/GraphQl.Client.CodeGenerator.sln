@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQl.Client.CodeGenerator.App.Console", "GraphQl.Client.CodeGenerator.App.Console\GraphQl.Client.CodeGenerator.App.Console.csproj", "{A7D6BB0D-4317-47D5-A079-8C3CDBC4B79D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQl.Client.CodeGenerator.Infra", "GraphQl.Client.CodeGenerator.Infra\GraphQl.Client.CodeGenerator.Infra.csproj", "{DB323847-D68A-4F23-9F13-F4480A317F40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQl.Client.CodeGenerator.Processor", "GraphQl.Client.CodeGenerator.Processor\GraphQl.Client.CodeGenerator.Processor.csproj", "{5C1D3B42-C9DE-4A36-A397-94585A1A3B9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", "{3EA7EB30-8434-418B-B0D2-C542A5A763FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQl.Client.CodeGenerator.Generators.DotNet", "GraphQl.Client.CodeGenerator.Generators.DotNet\GraphQl.Client.CodeGenerator.Generators.DotNet.csproj", "{A5F220C3-F1AC-4600-A9C8-018CB876E850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7D6BB0D-4317-47D5-A079-8C3CDBC4B79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D6BB0D-4317-47D5-A079-8C3CDBC4B79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D6BB0D-4317-47D5-A079-8C3CDBC4B79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D6BB0D-4317-47D5-A079-8C3CDBC4B79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB323847-D68A-4F23-9F13-F4480A317F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB323847-D68A-4F23-9F13-F4480A317F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB323847-D68A-4F23-9F13-F4480A317F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB323847-D68A-4F23-9F13-F4480A317F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1D3B42-C9DE-4A36-A397-94585A1A3B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1D3B42-C9DE-4A36-A397-94585A1A3B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1D3B42-C9DE-4A36-A397-94585A1A3B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1D3B42-C9DE-4A36-A397-94585A1A3B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F220C3-F1AC-4600-A9C8-018CB876E850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F220C3-F1AC-4600-A9C8-018CB876E850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F220C3-F1AC-4600-A9C8-018CB876E850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F220C3-F1AC-4600-A9C8-018CB876E850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5F220C3-F1AC-4600-A9C8-018CB876E850} = {3EA7EB30-8434-418B-B0D2-C542A5A763FC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {366D0895-1595-438B-A7DE-94958976A193}
+	EndGlobalSection
+EndGlobal

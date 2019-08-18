@@ -1,0 +1,129 @@
+namespace {{ namespace }}
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
+    using {{ namespace }}.Infra;
+{{#each additionalClientUsing }}
+    using {{ this }};
+{{/each}}
+
+    #region Dtos
+
+{{#each schema.types }}
+    {{> dto }}
+
+{{/each}}
+{{#if schema.queryType }}
+{{#with schema.queryType }}
+    {{> dto }}
+
+{{/with}}
+{{/if}}
+{{#if schema.mutationType }}
+{{#with schema.mutationType }}
+    {{> dto }}
+
+{{/with}}
+{{/if}}
+{{#if schema.subscriptionType }}
+{{#with schema.subscriptionType }}
+    {{> dto }}
+
+{{/with}}
+{{/if}}
+    #endregion
+
+    #region Builders
+
+{{#each schema.types }}
+    {{#ifKind this "object" "interface" "union" }}
+    {{> builder }}
+
+    {{/ifKind}}
+{{/each}}
+{{#if schema.queryType }}
+{{#with schema.queryType }}
+    {{> builder }}
+
+{{/with}}
+{{/if}}
+{{#if schema.mutationType }}
+{{#with schema.mutationType }}
+    {{> builder }}
+
+{{/with}}
+{{/if}}
+{{#if schema.subscriptionType }}
+{{#with schema.subscriptionType }}
+    {{> builder }}
+
+{{/with}}
+{{/if}}
+    #endregion
+
+    public interface I{{ mainClientFactoryClassName }}
+    {
+{{#if schema.queryType }}
+{{#with schema.queryType }}
+        IGraphQlQueryClient<{{ resolveDtoName this }}> CreateQueryClient(Action<{{ resolveBuilderName this }}> setupAction);
+{{/with}}
+{{/if}}
+{{#if schema.mutationType }}
+{{#with schema.mutationType }}
+
+        IGraphQlMutationClient<{{ resolveDtoName this }}> CreateMutationClient(Action<{{ resolveBuilderName this }}> setupAction);
+{{/with}}
+{{/if}}
+{{#if schema.subscriptionType }}
+{{#with schema.subscriptionType }}
+
+        IGraphQlSubscriptionClient<{{ resolveDtoName this }}> CreateSubscriptionClient(Action<{{ resolveBuilderName this }}> setupAction);
+{{/with}}
+{{/if}}
+    }
+
+
+    public class {{ mainClientFactoryClassName }} : ClientFactoryBase, I{{ mainClientFactoryClassName }}
+    {
+        public {{ mainClientFactoryClassName }}(string url, JsonSerializerSettings jsonSerializerSettings = null)
+            : base(url, jsonSerializerSettings)
+        {
+        }
+
+
+{{#if schema.queryType }}
+{{#with schema.queryType }}
+        public IGraphQlQueryClient<{{ resolveDtoName this }}> CreateQueryClient(Action<{{ resolveBuilderName this }}> setupAction)
+        {
+            var type = new {{ resolveBuilderName this }}();
+            setupAction(type);
+            return CreateQueryClient<{{ resolveDtoName this }}>(type);
+        }
+{{/with}}
+{{/if}}
+{{#if schema.mutationType }}
+{{#with schema.mutationType }}
+
+        public IGraphQlMutationClient<{{ resolveDtoName this }}> CreateMutationClient(Action<{{ resolveBuilderName this }}> setupAction)
+        {
+            var type = new {{ resolveBuilderName this }}();
+            setupAction(type);
+            return CreateMutationClient<{{ resolveDtoName this }}>(type);
+        }
+{{/with}}
+{{/if}}
+{{#if schema.subscriptionType }}
+{{#with schema.subscriptionType }}
+
+        public IGraphQlSubscriptionClient<{{ resolveDtoName this }}> CreateSubscriptionClient(Action<{{ resolveBuilderName this }}> setupAction)
+        {
+            var type = new {{ resolveBuilderName this }}();
+            setupAction(type);
+            return CreateSubscriptionClient<{{ resolveDtoName this }}>(type);
+        }
+{{/with}}
+{{/if}}
+    }
+}

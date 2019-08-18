@@ -1,0 +1,47 @@
+{{#withDocs}}
+    /// <summary>
+    {{#if description}}
+    /// {{ description }}.
+    {{/if}}
+    /// Dto: <see cref="{{ resolveDtoName this }}" />.
+    /// </summary>
+{{/withDocs}}
+    public class {{ resolveBuilderName this }} : TypeBase
+    {
+        public {{ resolveBuilderName this }}() : base("{{ name }}")
+        {
+        }
+
+{{#each fields }}
+
+    {{#withDocs}}
+        {{#if description}}
+        /// <summary>
+        /// {{ description }}.
+        /// </summary>
+        {{/if}}
+    {{/withDocs}}
+    {{#ifKind type "object" "interface" "union" }}
+        {{> builder-method-object }}
+    {{else}}
+        {{> builder-method-scalar }}
+    {{/ifKind}}
+{{/each}}
+{{#each possibleTypes }}
+
+    {{#withDocs}}
+        {{#if description}}
+        /// <summary>
+        /// {{ description }}.
+        /// </summary>
+        {{/if}}
+    {{/withDocs}}
+        public {{ resolveBuilderName ../ }} {{ resolveOnTypeMethodName this }}(Action<{{ resolveBuilderName this }}> setupAction)
+        {
+            var type = new {{ resolveBuilderName this }}();
+            setupAction(type);
+            IncludeOnTypeField(type);
+            return this;
+        }
+{{/each}}
+    }

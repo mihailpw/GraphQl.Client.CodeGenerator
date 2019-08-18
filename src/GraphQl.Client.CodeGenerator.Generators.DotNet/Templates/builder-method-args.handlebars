@@ -1,0 +1,7 @@
+{{#if this }}
+
+    {{#each this }}
+            {{{ resolveDtoName type 'true' }}} {{ name }}{{{ resolveDefaultValue this " = {0}" }}}{{#unless @last}},
+            {{/unless~}}
+    {{/each}}
+{{/if}}

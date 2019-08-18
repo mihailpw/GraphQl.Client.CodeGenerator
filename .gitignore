@@ -1,0 +1,12 @@
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+x64/
+x86/
+bld/
+out/
+nuget-out/
+.vs/
+*.user

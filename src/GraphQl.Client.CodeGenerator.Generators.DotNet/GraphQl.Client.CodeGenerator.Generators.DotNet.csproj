@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\builder-method-args.handlebars" />
+    <None Remove="Templates\builder-method-object.handlebars" />
+    <None Remove="Templates\builder-method-scalar.handlebars" />
+    <None Remove="Templates\builder.handlebars" />
+    <None Remove="Templates\client.handlebars" />
+    <None Remove="Templates\dto.handlebars" />
+    <None Remove="Templates\infra.handlebars" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\builder-method-args.handlebars" />
+    <EmbeddedResource Include="Templates\builder-method-object.handlebars" />
+    <EmbeddedResource Include="Templates\builder-method-scalar.handlebars" />
+    <EmbeddedResource Include="Templates\builder.handlebars" />
+    <EmbeddedResource Include="Templates\client.handlebars" />
+    <EmbeddedResource Include="Templates\dto.handlebars" />
+    <EmbeddedResource Include="Templates\infra.handlebars" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Handlebars.Net" Version="1.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQl.Client.CodeGenerator.Infra\GraphQl.Client.CodeGenerator.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
