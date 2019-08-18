@@ -1,0 +1,52 @@
+{
+  "schemaUri": "https://swapi.apis.guru",
+  "generator": "dotnet",
+  "innerLevelOfType": 4,
+  "name": "GraphQlApiClientFactory.generated.cs",
+  "outputToFolder": true,
+  "outputFolderPath": "./",
+  "outputToConsole": false,
+  "namespace": "Sample.DotNet.Api",
+  "mainClientFactoryClassName": "GraphQlApiClientFactory",
+  "additionalClientUsing": null,
+  "generateDocs": false,
+  "generateInputObjectConstructor": true,
+  "typeNaming": {
+    "dtoEnum": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Enum"
+    },
+    "dtoInputObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoInterface": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "dtoUnion": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Dto"
+    },
+    "builderInterface": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "builderObject": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "builderUnion": {
+      "removeRegex": "Type",
+      "buildFormat": "{0}Builder"
+    },
+    "constructionOnType": {
+      "removeRegex": "Type",
+      "buildFormat": "On{0}"
+    }
+  }
+}
